@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nuptial &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FREEHTML5.CO" />
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montez" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/superfish.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+        @font-face {
+            font-family: 'ChenYuLuoYan';
+            src: url('fonts/ChenYuLuoYan-Thin.ttf') format('truetype'); /* 確認這個路徑與文件存在 */
+        }
+
+        body {
+            font-family: 'ChenYuLuoYan', cursive; /* 使用自定義的辰宇落雁體字體 */
+            background-color: #f0f0f0;
+            margin: 0; /* 去除頁面預設邊距 */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            font-size: 24px; /* 設置字體大小 */
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes letter-open {
+            0% { transform: scaleY(0); }
+            80% { transform: scaleY(1.1); }
+            100% { transform: scaleY(1); }
+        }
+
+        .letter-box {
+            display: block;
+            overflow: hidden; /* 避免文字溢出容器 */
+            white-space: pre-wrap; /* 保持空白字符並允許換行 */
+            letter-spacing: .15em; /* 字間距 */
+            transform-origin: top; /* 變形起點 */
+            animation: letter-open 0.5s ease-in;
+            margin: 20x; /* 設置距離左上方邊界的邊距 */
+            line-height: 1.5; /* 調整行間距 */
+            
+        }
+    </style>
+</head>
+<body>
+    
+    
+   
+    <header id="fh5co-header-section" class="sticky-banner">
+        <div class="container">
+            <div class="nav-header">
+                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+                <h1 id="fh5co-logo"><a href="index.html">LOVE</a></h1>
+                <!-- START #fh5co-menu-wrap -->
+                <nav id="fh5co-menu-wrap" role="navigation">
+                    <ul class="sf-menu" id="fh5co-primary-menu">
+                        <li><a href="main.html" >Home</a></li>
+                        <li><a href="love-add3.html">Gallery</a></li>
+                        <li class="active"><a href="letter.html">Letter</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="letter-box" id="letterBox"></div>
+    </div>
+
+    <script>
+        const text = "生日快樂!!!!\n這是下一段內容。";
+        const letterBox = document.getElementById('letterBox');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                if (text.charAt(index) === '\n') {
+                    letterBox.innerHTML += '<br>'; /* 轉換換行符為 <br> */
+                } else {
+                    letterBox.innerHTML += text.charAt(index);
+                }
+                index++;
+                setTimeout(typeWriter, 100); // 設置打字動畫的速度（以毫秒為單位）
+            } else {
+                letterBox.innerHTML = text.replace(/\n/g, '<br>'); // 完成打字動畫後顯示完整文本並保持換行
+            }
+        }
+
+        setTimeout(typeWriter, 500); // 設置信件動畫的延遲時間（以毫秒為單位）
+    </script>
+</body>
+</html>
